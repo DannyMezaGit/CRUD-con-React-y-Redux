@@ -1,0 +1,29 @@
+{
+  "productos": [
+    {
+      "id": 2,
+      "nombre": "React y Redux definitivo",
+      "precio": "500"
+    },
+    {
+      "id": 3,
+      "nombre": "Principito v2",
+      "precio": "201"
+    },
+    {
+      "nombre": "Padre Rico padre Pobre",
+      "precio": "500",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "nombre": "Node, React y MongoDB",
+      "precio": "800"
+    },
+    {
+      "nombre": "Negocio del siglo XXI",
+      "precio": "700",
+      "id": 6
+    }
+  ]
+}
