@@ -10,6 +10,7 @@ import {
 import Swal from 'sweetalert2';
 
 import clienteAxios from '../config/axios';
+import Productos from '../components/Productos';
 
 export function crearNuevoProductoAction(producto){
     return async (dispatch) => {
@@ -64,10 +65,27 @@ const agregarProductoError = estado => ({
 export function obtenerProductosAction() {
     return async (dispatch) => {
         dispatch( descargarProductos() );
+
+        try {
+            const respuesta = await clienteAxios.get('/productos');
+            dispatch( descargaProductosExitosa(respuesta.data) );
+        } catch (error) {
+            dispatch( descargaProductosError() )
+        }
     }
 }
 
 const descargarProductos = () => ({
     type: COMENZAR_DESCARGA_PRODUCTOS,
+    payload: true
+})
+
+const descargaProductosExitosa = productos => ({
+    type: DESCARGA_PRODUCTOS_EXITO,
+    payload: productos
+})
+
+const descargaProductosError = () =>  ({
+    type: DESCARGA_PRODUCTOS_ERROR,
     payload: true
 })
