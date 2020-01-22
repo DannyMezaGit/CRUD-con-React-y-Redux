@@ -29,6 +29,11 @@
       "nombre": "Carnita Asada",
       "precio": 700,
       "id": 6
+    },
+    {
+      "nombre": "Piñita",
+      "precio": 200,
+      "id": 7
     }
   ]
 }
