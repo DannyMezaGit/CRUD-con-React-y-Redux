@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Actions de redux
 import { crearNuevoProductoAction } from '../actions/productoActions';
 
     const NuevoProductos = () => {
+
+        // state del componente
+        const [nombre, guardarNombre] = useState('');
+        const [precio, guardarPrecio] = useState(0);
+
 
         // utilizar useDispatch y te crea una función
         const dispatch = useDispatch();
@@ -17,7 +22,7 @@ import { crearNuevoProductoAction } from '../actions/productoActions';
         e.preventDefault();
 
         // Validar Form
-        
+
         // Qué hacer si no hay error
 
         //Crear el producto
@@ -45,6 +50,8 @@ import { crearNuevoProductoAction } from '../actions/productoActions';
                                     className="form-control"
                                     placeholder="Nombre Producto"  
                                     name="nombre"
+                                    value={nombre}
+                                    onChange={e => guardarNombre(e.target.value)}
                                 />
                             </div>
 
@@ -55,6 +62,8 @@ import { crearNuevoProductoAction } from '../actions/productoActions';
                                     className="form-control"
                                     placeholder="Precio Producto"   
                                     name="precio"
+                                    value={precio}
+                                    onChange={e => guardarPrecio(Number(e.target.value))}
                                 />
                             </div>
 
