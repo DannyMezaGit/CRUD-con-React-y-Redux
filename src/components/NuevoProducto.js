@@ -88,7 +88,7 @@ import { crearNuevoProductoAction } from '../actions/productoActions';
                             </button>
                         </form>
 
-                        { cargando ? <p>Cargando...</p> : null }
+                        { !cargando ? <p>Cargando...</p> : null }
                         { error? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null }
 
                     </div>
