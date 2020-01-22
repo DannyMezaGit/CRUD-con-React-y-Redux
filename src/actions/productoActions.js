@@ -103,6 +103,13 @@ export function borrarProductoAction(id) {
             clienteAxios.delete(`/productos/${id}`);
             dispatch( eliminarProuctoExito() );
 
+            // Si se elimina, mostrar alerta
+            Swal.fire(
+                'Eliminado!',
+                'Producto eliminado correctamente',
+                'success'
+            )
+
         } catch (error) {
             dispatch( eliminarProductoError() );
         }
