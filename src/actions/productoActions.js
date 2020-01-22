@@ -6,3 +6,8 @@ import {
 
 } from '../types';
 
+export function crearNuevoProductoAction(){
+    return () => {
+        
+    }
+}
