@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux';
-import { obtenerProductosAction } from '../actions/productoActions';
+import { obtenerProductosAction, obtenerProductoEditar } from '../actions/productoActions';
 import Producto from './Producto';
 
 const Productos = () => {

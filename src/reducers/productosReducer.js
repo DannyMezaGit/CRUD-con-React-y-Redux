@@ -9,7 +9,11 @@ import {
 
     OBTENER_PRODUCTO_ELIMINAR,
     PRODUCTO_ELIMINADO_EXITO,
-    PRODUCTO_ELIMINADO_ERROR
+    PRODUCTO_ELIMINADO_ERROR,
+
+    OBTENER_PRODUCTO_EDITAR,
+    PRODUCTO_EDITADO_EXITO,
+    PRODUCTO_EDITADO_ERROR
 
 } from '../types';
 
@@ -62,6 +66,11 @@ export default function(state = initialState, action){
                 ...state,
                 productos: state.productos.filter( producto => producto.id !== state.productoEliminar),
                 productoEliminar: null
+            }
+        case OBTENER_PRODUCTO_EDITAR:
+            return{
+                ...state,
+                productoEditar: action.payload
             }
         
 
