@@ -6,8 +6,8 @@ import {
 
 } from '../types';
 
-export function crearNuevoProductoAction(){
+export function crearNuevoProductoAction(producto){
     return () => {
-        
+
     }
 }

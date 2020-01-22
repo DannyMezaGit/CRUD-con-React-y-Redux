@@ -15,18 +15,22 @@ import { crearNuevoProductoAction } from '../actions/productoActions';
         const dispatch = useDispatch();
 
     // mandar llamar el action de productoAction
-    const agregarProducto = () => dispatch( crearNuevoProductoAction() );
+    const agregarProducto = (producto) => dispatch( crearNuevoProductoAction(producto) );
 
     // cuando el usuario haga submit
     const submitNuevoProducto = e => {
         e.preventDefault();
 
         // Validar Form
-
+        if(nombre.trim() === '' || precio <= 0)
+        return;
         // Qué hacer si no hay error
 
         //Crear el producto
-        agregarProducto();
+        agregarProducto({
+            nombre,
+            precio
+        });
     }
 
 
