@@ -6,13 +6,21 @@ import {
 
 } from '../types';
 
+import clienteAxios from '../config/axios';
+
 export function crearNuevoProductoAction(producto){
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch( agregarProducto() );
 
         try {
+            // Insertar en la BD
+            await clienteAxios.post('/productos', producto);
+
+            // Si todo sale bien, actualizar el state
             dispatch( agregarProductoExito(producto) )
         } catch (error) {
+
+            // Si hay un error
             dispatch(agregarProductoError(true))
         }
     }
