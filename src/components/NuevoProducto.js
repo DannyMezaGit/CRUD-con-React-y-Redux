@@ -6,13 +6,19 @@ import { crearNuevoProductoAction } from '../actions/productoActions';
 
     const NuevoProductos = () => {
 
-        // state del componente
-        const [nombre, guardarNombre] = useState('');
-        const [precio, guardarPrecio] = useState(0);
+    // state del componente
+    const [nombre, guardarNombre] = useState('');
+    const [precio, guardarPrecio] = useState(0);
 
 
-        // utilizar useDispatch y te crea una función
-        const dispatch = useDispatch();
+    // utilizar useDispatch y te crea una función
+    const dispatch = useDispatch();
+
+    // Acceder al state del store
+    const cargando = useSelector( state => state.productos);
+    const error = useSelector( state => state.productos.error);
+    console.log(cargando);
+    
 
     // mandar llamar el action de productoAction
     const agregarProducto = (producto) => dispatch( crearNuevoProductoAction(producto) );
@@ -78,6 +84,10 @@ import { crearNuevoProductoAction } from '../actions/productoActions';
                                 Agregar
                             </button>
                         </form>
+
+                        { cargando ? <p>Cargando...</p> : null }
+                        { error? <p className="alert alert-danger p2 mt-4 text-center">Hubo un error</p> : null }
+
                     </div>
                 </div>
             </div>
