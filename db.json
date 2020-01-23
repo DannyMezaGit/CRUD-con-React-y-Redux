@@ -3,10 +3,10 @@
     {
       "id": 1,
       "nombre": "Jugo de Zanahoria",
-      "precio": "31111"
+      "precio": "500"
     },
     {
-      "nombre": "Jugo de Naranja",
+      "nombre": "Jugo de Naranjas",
       "precio": "300",
       "id": 3
     },
@@ -21,8 +21,8 @@
       "id": 5
     },
     {
-      "nombre": "Carnita Asada",
-      "precio": 700,
+      "nombre": "Carnita Asada diezmillo",
+      "precio": "750",
       "id": 6
     },
     {
